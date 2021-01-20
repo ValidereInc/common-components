@@ -11,8 +11,8 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.(sass|scss|css)$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -22,9 +22,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js",
-    libraryTarget: 'umd',
-    libraryExport: 'default',
-    library: 'validere-common',
+    libraryTarget: "umd",
+    libraryExport: "default",
+    library: "validere-common",
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
